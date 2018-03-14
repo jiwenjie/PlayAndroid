@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="98px"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@color/colorPrimary"
+    android:id="@+id/module_topBar_layout">
+
+    <com.example.root.playandroidtest.view.IconFontTextView
+        android:id="@+id/module_return"
+        android:layout_width="98px"
+        android:layout_height="match_parent"
+        android:textSize="65px"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="@string/ic_return"
+        android:layout_marginLeft="@dimen/little_space"
+        />
+
+        <TextView
+            android:id="@+id/module_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="120px"
+            android:layout_marginRight="120px"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="36px"
+            />
+
+    <com.example.root.playandroidtest.view.IconFontTextView
+        android:id="@+id/module_other"
+        android:layout_width="98px"
+        android:layout_height="match_parent"
+        android:textSize="55px"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="@string/ic_share"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        />
+
+    <View
+        style="@style/lineStyle"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>

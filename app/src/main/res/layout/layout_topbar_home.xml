@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/topbar_height"
+    android:background="@color/main"
+    android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/moudle_silde"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/lyric"
+            android:layout_gravity="left"
+            />
+
+        <!--<com.lqm.tomatoit.widget.IconFontTextView-->
+            <!--android:id="@+id/tv_hot"-->
+            <!--style="@style/topbar_icon_style"-->
+            <!--android:layout_marginRight="20px"-->
+            <!--android:layout_toLeftOf="@+id/tv_search"-->
+            <!--android:text="@string/ic_hot"-->
+            <!--android:visibility="invisible"-->
+            <!--/>-->
+
+        <!--<com.lqm.tomatoit.widget.IconFontTextView-->
+            <!--android:id="@+id/tv_search"-->
+            <!--style="@style/topbar_icon_style"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginRight="20px"-->
+            <!--android:text="@string/ic_search" />-->
+
+
+</LinearLayout>
