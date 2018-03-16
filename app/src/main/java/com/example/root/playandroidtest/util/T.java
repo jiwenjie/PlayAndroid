@@ -9,7 +9,6 @@ import android.widget.Toast;
  * Toast统一管理类
  */
 
-
 public class T {
 
     private T() {
@@ -44,6 +43,5 @@ public class T {
             Toast.makeText(context, message, Toast.LENGTH_LONG).show();;
         }
     }
-
 
 }

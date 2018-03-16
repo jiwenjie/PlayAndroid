@@ -10,7 +10,6 @@ import android.support.v7.widget.AppCompatImageView;
 
 import com.example.root.playandroidtest.R;
 import com.example.root.playandroidtest.app.AppConst;
-
 /**
  * Created by Root on 2018/3/13.
  */
@@ -50,6 +49,7 @@ public class AppStart extends AppCompatActivity {
 
     }
 
+
     Runnable runnableFirst = new Runnable() {
         @Override
         public void run() {
@@ -66,4 +66,5 @@ public class AppStart extends AppCompatActivity {
             finish();
         }
     };
+
 }

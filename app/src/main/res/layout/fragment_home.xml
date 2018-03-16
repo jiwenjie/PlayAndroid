@@ -9,14 +9,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/index_home_text"
-            android:text="主页"
-            android:textSize="50sp"
-            android:gravity="center"
-            android:textColor="#0000ff"
+        <!--<TextView-->
+            <!--android:id="@+id/index_home_text"-->
+            <!--android:text="主页"-->
+            <!--android:textSize="50sp"-->
+            <!--android:gravity="center"-->
+            <!--android:textColor="#0000ff"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent" />-->
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/index_home_recycleView_data"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            />
 
     </android.support.v4.widget.SwipeRefreshLayout>
 

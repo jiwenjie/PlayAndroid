@@ -3,15 +3,28 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/topbar_height"
     android:background="@color/main"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/moudle_silde"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/index_home_button"
+            android:layout_width="@dimen/home_ic_btn_height"
+            android:layout_height="@dimen/home_ic_btn_width"
+            android:layout_marginLeft="@dimen/home_ic_margin"
             android:background="@drawable/lyric"
-            android:layout_gravity="left"
+            android:layout_gravity="left|center_vertical"
             />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/home_title"
+            android:fontFamily="@string/font_family"
+            android:textColor="@color/white"
+            android:layout_height="@dimen/home_ic_btn_height"
+            android:gravity="center_horizontal"
+            android:layout_marginRight="@dimen/home_topbar_marginRight"
+            android:layout_marginTop="@dimen/home_title_margin_top"
+            android:textSize="23dp"/>
 
         <!--<com.lqm.tomatoit.widget.IconFontTextView-->
             <!--android:id="@+id/tv_hot"-->

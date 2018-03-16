@@ -5,7 +5,7 @@ import android.graphics.Typeface;
 import android.util.AttributeSet;
 
 /**
- * @user  lqm
+ * @user  Root
  * @desc  使用IConFont TextView
  */
 public class IconFontTextView extends android.support.v7.widget.AppCompatTextView {

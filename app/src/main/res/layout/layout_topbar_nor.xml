@@ -2,7 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="98px"
+    android:layout_height="@dimen/topbar_icon_width_height"
     android:orientation="horizontal"
     android:gravity="center_vertical"
     android:background="@color/colorPrimary"
@@ -10,9 +10,9 @@
 
     <com.example.root.playandroidtest.view.IconFontTextView
         android:id="@+id/module_return"
-        android:layout_width="98px"
+        android:layout_width="@dimen/topbar_icon_width_height"
         android:layout_height="match_parent"
-        android:textSize="65px"
+        android:textSize="@dimen/top_icon_size"
         android:gravity="center"
         android:textColor="@color/white"
         android:text="@string/ic_return"
@@ -24,18 +24,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_marginLeft="120px"
-            android:layout_marginRight="120px"
+            android:layout_marginLeft="@dimen/normal_topbar_margin"
+            android:layout_marginRight="@dimen/normal_topbar_margin"
             android:maxLines="1"
             android:textColor="@color/white"
-            android:textSize="36px"
+            android:textSize="@dimen/normal_topbar_textSize"
             />
 
     <com.example.root.playandroidtest.view.IconFontTextView
         android:id="@+id/module_other"
-        android:layout_width="98px"
+        android:layout_width="@dimen/topbar_icon_width_height"
         android:layout_height="match_parent"
-        android:textSize="55px"
+        android:textSize="@dimen/normal_topbar_margin_text"
         android:gravity="center"
         android:textColor="@color/white"
         android:text="@string/ic_share"

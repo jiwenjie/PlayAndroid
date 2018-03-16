@@ -22,8 +22,6 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         mContext = this.getApplicationContext();
-
-
     }
 
     public static Context getContext() {
