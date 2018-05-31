@@ -31,7 +31,6 @@ public class ActivityUtils {
         if (addToBackStack) {
             transaction.addToBackStack(null);
         }
-
         transaction.commit();
     }
 

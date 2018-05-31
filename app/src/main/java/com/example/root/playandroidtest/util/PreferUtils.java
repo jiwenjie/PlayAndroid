@@ -11,7 +11,6 @@ import android.content.SharedPreferences;
 
 //用以获取真假值，判断用户是否登陆等等
 public class PreferUtils {
-
     public static final String PREF_NAME = "config";
 
     public static boolean getBoolean(Context context, String key, boolean defaultValue) {

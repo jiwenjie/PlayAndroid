@@ -20,7 +20,6 @@ import com.example.root.playandroidtest.app.MyApplication;
 public class NetWorkStateReceiver extends BroadcastReceiver {
 
 //    boolean isConnect = false;
-
     public static final String NET_CHANGE = "net_change";
     //标记当前网络状态，0为无可用网络状态，1表示有。
     public static final String NET_TYPE = "net_type";

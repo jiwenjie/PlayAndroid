@@ -8,6 +8,7 @@ import android.util.DisplayMetrics;
  */
 
 public class Util {
+
     public static int pixelToDp(Context context, int pixel) {
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
         return pixel < 0 ? pixel : Math.round(pixel / displayMetrics.density);

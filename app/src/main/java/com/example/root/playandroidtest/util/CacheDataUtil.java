@@ -26,7 +26,6 @@ import java.util.List;
  */
 
 public class CacheDataUtil {
-
     /**
      * 设置缓存有效期是6小时
      * 可以专门把失效事件作为一个参数，提供不同失效事件场景定制缓存失效事件

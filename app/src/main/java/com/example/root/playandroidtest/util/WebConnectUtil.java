@@ -22,7 +22,6 @@ import okhttp3.Response;
  */
 
 public class WebConnectUtil {
-
     //提出网络请求，获取所得的数据(返回数据)
 //   static String WebresponseData = "";
     public static void sendRequestWidthOkHttp(String url, okhttp3.Callback callback) {

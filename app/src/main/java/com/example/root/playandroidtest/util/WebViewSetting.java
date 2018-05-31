@@ -21,7 +21,6 @@ public class WebViewSetting {
 //        CommonWebView urlView = getView();
 //        ProgressBar progressBar = urlView.getProgressBar();
 
-
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setBuiltInZoomControls(true);

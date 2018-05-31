@@ -24,7 +24,6 @@ import java.util.Map;
  */
 
 public class ParserJsonWebData {
-
     //使用JSON来解析数据  (使用把三层包装分开分别定义的方式)
     public static List<ArticleBean> parseJSONWITHJSONObject(String jsonData) {
         List<ArticleBean> listsJson = null;

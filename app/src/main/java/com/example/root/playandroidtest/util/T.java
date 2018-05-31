@@ -19,7 +19,6 @@ public class T {
 
     public static boolean isShow = true;
 
-
     /**
      * 短时间显示Toast统一管理
      * @param context
