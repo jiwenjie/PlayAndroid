@@ -1,45 +1,44 @@
 <resources>
-
     <!--文字大小-->
-    <dimen name="text_special_size">48px</dimen><!--40px以上-->
-    <dimen name="text_big_size">36px</dimen><!--32-36-->
-    <dimen name="text_medium_size">28px</dimen><!--24-32-->
-    <dimen name="text_small_size">20px</dimen><!--16-22-->
-    <dimen name="text_small_size24">24px</dimen><!--16-22-->
-    <dimen name="vertical_bar1_size">40px</dimen>
+    <dimen name="text_special_size">18dp</dimen><!--40px以上-->
+    <dimen name="text_big_size">18dp</dimen><!--32-36-->
+    <dimen name="text_medium_size">14dp</dimen><!--24-32-->
+    <dimen name="text_small_size">20dp</dimen><!--16-22-->
+    <dimen name="text_small_size24">24dp</dimen><!--16-22-->
+    <dimen name="vertical_bar1_size">40dp</dimen>
     <dimen name="little_space">5dp</dimen>
-    <dimen name="vertical_layout_height">105px</dimen>
-    <dimen name="vertical_layout_margin">20px</dimen>
-    <dimen name="normal_topbar_margin_text">55dp</dimen>
-    <dimen name="topbar_big_title_size">58px</dimen>
-    <dimen name="item_title_size">30px</dimen>
+    <dimen name="vertical_layout_height">105dp</dimen>
+    <dimen name="vertical_layout_margin">20dp</dimen>
+    <dimen name="normal_topbar_margin_text">30dp</dimen>
+    <dimen name="topbar_big_title_size">58dp</dimen>
+    <dimen name="item_title_size">30dp</dimen>
 
     <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="topbar_height">138px</dimen>
-    <dimen name="topbar_icon_size">44px</dimen>
-    <dimen name="topbar_icon_width_height">138px</dimen>
-    <dimen name="content_left_right_margin_padding_small">20px</dimen>
-    <dimen name="content_left_right_margin_padding_big">30px</dimen>
-    <dimen name="setting_item_height">125px</dimen>
-    <dimen name="top_icon_size">65px</dimen>
+    <dimen name="topbar_height">48dp</dimen>
+    <dimen name="topbar_icon_size">44dp</dimen>
+    <dimen name="topbar_icon_width_height">50dp</dimen>
+    <dimen name="content_left_right_margin_padding_small">20dp</dimen>
+    <dimen name="content_left_right_margin_padding_big">30dp</dimen>
+    <dimen name="setting_item_height">125dp</dimen>
+    <dimen name="top_icon_size">24dp</dimen>
 
     <dimen name="normal_topbar_margin">120dp</dimen>
     <dimen name="normal_topbar_textSize">36dp</dimen>
-    <dimen name="tab_icon_size">35px</dimen>
-    <dimen name="tab_text_size">24px</dimen>
+    <dimen name="tab_icon_size">35dp</dimen>
+    <dimen name="tab_text_size">24dp</dimen>
     <dimen name="home_ic_btn_height">40dp</dimen>
     <dimen name="home_ic_btn_width">40dp</dimen>
     <dimen name="home_ic_margin">10dp</dimen>
     <dimen name="home_ic_item_margin">16dp</dimen>
 
-    <dimen name="main_horizontal_margin">30px</dimen>
-    <dimen name="home_topbar_marginRight">60px</dimen>
-    <dimen name="home_title_margin_top">30px</dimen>
-    <dimen name="item_margintop">28px</dimen>
-    <dimen name="item_margintop_small">20px</dimen>
+    <dimen name="main_horizontal_margin">30dp</dimen>
+    <dimen name="home_topbar_marginRight">60dp</dimen>
+    <dimen name="home_title_margin_top">10dp</dimen>
+    <dimen name="item_margintop">28dp</dimen>
+    <dimen name="item_margintop_small">20dp</dimen>
     <dimen name="main_v_margin_db">7dp</dimen>
-    <dimen name="main_item_title_size">38px</dimen>
-    <dimen name="topbar_big_icon_size">66px</dimen>
+    <dimen name="main_item_title_size">38dp</dimen>
+    <dimen name="topbar_big_icon_size">66dp</dimen>
 
 
     //

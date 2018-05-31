@@ -6,13 +6,17 @@ import com.example.root.playandroidtest.app.AppConst;
 import com.example.root.playandroidtest.app.MyApplication;
 import com.example.root.playandroidtest.bean.ArticleBean;
 import com.example.root.playandroidtest.bean.ArticleThree;
+import com.example.root.playandroidtest.bean.TypeChildrenBean;
+import com.example.root.playandroidtest.bean.TypeTagVO;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Root on 2018/3/15.
@@ -21,21 +25,10 @@ import java.util.List;
 
 public class ParserJsonWebData {
 
-//    private static String title = "";
-//    private static String author = "";
-//    private static String link = "";
-//    //private static long publishTime = 0;
-//    private static String chapterName = "";
-//    private static String niceDate = "";
-    //定义Article Bean的集合，存放解析出来的每一个对象，用以调用数据
-
-//    public static List<ArticleBean> lists;
-
     //使用JSON来解析数据  (使用把三层包装分开分别定义的方式)
     public static List<ArticleBean> parseJSONWITHJSONObject(String jsonData) {
         List<ArticleBean> listsJson = null;
         try {
-
             JSONObject object = new JSONObject(jsonData); //把传递来的第一层数据包装成一个JSONObject对象
             String data = object.getString("data"); //获取第二层的json数据
             JSONObject second = new JSONObject(data); //把第二层的数据包装成一个JSONObject对象
@@ -44,7 +37,6 @@ public class ParserJsonWebData {
             //String title = third.getString("author");
 
             for (int i = 0; i < third.length(); i++) {
-
                     ArticleBean beans = new ArticleBean();
                     JSONObject jsonObject = third.getJSONObject(i);
                     beans.setTitle(jsonObject.getString("title"));
@@ -53,7 +45,6 @@ public class ParserJsonWebData {
                     beans.setChapterName(jsonObject.getString("chapterName"));
                     beans.setNiceDate(jsonObject.getString("niceDate"));
                     listsJson.add(beans);
-
             }
 
         } catch (Exception e) {
@@ -63,7 +54,6 @@ public class ParserJsonWebData {
         return listsJson;
 
     }
-
 
     //通过GSON方法来解析网络数据（使用内部类的实体类）
     public static List<ArticleBean> parseJsonWithGSON(String responseData) {
@@ -88,17 +78,7 @@ public class ParserJsonWebData {
             bean.setNiceDate(jsonBean.getData().getDatas().get(i).getNiceDate());
             bean.setChapterName(jsonBean.getData().getDatas().get(i).getChapterName());
 
-//            if (bean!=null) {
-//                GsonLists.add(bean);
-//            }
-//            try {
-                GsonLists.add(bean);
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-
-//            T.showShort(MyApplication.getContext(), "对象为空");
-//            Log.d("MainActivity", "对象为空 is -------------------");
+            GsonLists.add(bean);
             //打印日志信息
             Log.d("MainActivity", "title is" + bean.getTitle());
             Log.d("MainActivity", "author is" + bean.getAuthor());
@@ -107,18 +87,82 @@ public class ParserJsonWebData {
             Log.d("MainActivity", "niceDate is" + bean.getNiceDate());
             Log.d("MainActivity", "chapterName is" + bean.getChapterName());
         }
-
         return GsonLists;
-
     }
+
+
+    //解析第二部分的Tab标签数据
+    //使用json解析数据
+    public static List<TypeTagVO> parseTagFirstWithJSON(String responseData) {
+//        List<TypeChildrenBean> beanList = new ArrayList<>();
+        List<TypeTagVO> voList = new ArrayList<>();
+        try {
+            JSONObject object = new JSONObject(responseData); //把传递来的第一层数据包装成一个JSONObject对象
+            String data = object.getString("data"); //获取第二层的json数据
+            JSONArray second = new JSONArray(data);
+            for (int i = 0; i < second.length(); i ++) {
+                JSONObject secondObject = second.getJSONObject(i);
+                TypeTagVO vo = new TypeTagVO();
+                vo.setName(secondObject.getString("name"));
+                Log.d("MainActivity", "Name is" + vo.getName());
+//                String thirdChild = secondObject.getString("children");
+//                JSONArray fuChild = new JSONArray(thirdChild);
+//                for (int j = 0; j < fuChild.length(); j ++) {
+//                    JSONObject thirdObject = fuChild.getJSONObject(j);
+//                    TypeChildrenBean childrenBean = new TypeChildrenBean();
+//                    childrenBean.setName(thirdObject.getString("name"));
+//                    Log.d("MainActivity", "Name is--------------" + childrenBean.getName());
+//                    beanList.add(childrenBean);
+//                }
+                voList.add(vo);
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return voList;
+    }
+
+    //解析Tab标签下的二级标签数据
+    public static Map<Integer,JSONArray> parseTagSecondWithJSON(String responseData) {
+//        List<TypeChildrenBean> beanList = new ArrayList<>();
+        Map<Integer,JSONArray> map = new HashMap<>();
+//        List<TypeTagVO> voList = new ArrayList<>();
+        try {
+            JSONObject object = new JSONObject(responseData); //把传递来的第一层数据包装成一个JSONObject对象
+            String data = object.getString("data"); //获取第二层的json数据
+            JSONArray second = new JSONArray(data);
+            for (int i = 0; i < second.length(); i ++) {
+                JSONObject secondObject = second.getJSONObject(i);
+//                TypeTagVO vo = new TypeTagVO();
+//                vo.setName(secondObject.getString("name"));
+//                Log.d("MainActivity", "Name is" + vo.getName());
+
+                String thirdChild = secondObject.getString("children");
+                JSONArray fuChild = new JSONArray(thirdChild);
+//                for (int j = 0; j < fuChild.length(); j ++) {
+//                    JSONObject thirdObject = fuChild.getJSONObject(j);
+//                    TypeChildrenBean childrenBean = new TypeChildrenBean();
+//                    childrenBean.setName(thirdObject.getString("name"));
+//                    Log.d("MainActivity", "Name is--------------" + childrenBean.getName());
+//                    beanList.add(childrenBean);
+//                }
+                map.put(i, fuChild);
+//                voList.add(vo);
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return map;
+    }
+
 
     //通过第一种方法解析数据
     public static List<ArticleBean> getBeanListOne(String data) {
-
-        //T.showShort(MyApplication.getContext(), "第一种方法解析数据");
-//        List<ArticleBean> listOne = parseJSONWITHJSONObject(data);
         return parseJSONWITHJSONObject(data);
-
     }
 
     //通过第二种方法解析数据

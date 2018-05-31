@@ -49,6 +49,11 @@ public class ArticleBean implements Serializable {
     private int courseId;
     private boolean collect;
 
+
+    public ArticleBean()
+    {
+        super();
+    }
     public int getId() {
         return id;
     }

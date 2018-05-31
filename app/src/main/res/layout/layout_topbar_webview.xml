@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/topbar_icon_width_height"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@color/colorPrimary"
+    android:id="@+id/module_topBar_layout">
+
+    <!--<com.example.root.playandroidtest.view.IconFontTextView-->
+        <!--android:id="@+id/module_return"-->
+        <!--android:layout_width="@dimen/topbar_icon_width_height"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:textSize="@dimen/top_icon_size"-->
+        <!--android:gravity="center"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:text="@string/ic_return"-->
+        <!--android:layout_marginLeft="@dimen/little_space"-->
+        <!--/>-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/module_title"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:layout_marginLeft="@dimen/normal_topbar_margin"-->
+        <!--android:layout_marginRight="@dimen/normal_topbar_margin"-->
+        <!--android:maxLines="1"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:textSize="@dimen/normal_topbar_textSize"-->
+        <!--/>-->
+
+    <!--<com.example.root.playandroidtest.view.IconFontTextView-->
+        <!--android:id="@+id/module_other"-->
+        <!--android:layout_width="@dimen/topbar_icon_width_height"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:textSize="@dimen/normal_topbar_margin_text"-->
+        <!--android:gravity="center"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:text="@string/ic_share"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:visibility="visible"-->
+        <!--/>-->
+
+    <!--<View-->
+        <!--style="@style/lineStyle"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--/>-->
+
+</RelativeLayout>

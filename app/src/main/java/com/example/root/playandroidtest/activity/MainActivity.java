@@ -23,7 +23,7 @@ import com.example.root.playandroidtest.fragment.UserFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private RadioGroup indexRadioGroup;
     private ViewPager viewPagerIndex;
@@ -32,18 +32,22 @@ public class MainActivity extends AppCompatActivity {
 
     private AppCompatImageButton homeImageButton;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//
+//
+//        initViews();
+//        ContentView();
+//
+//    }
 
-        initViews();
-        ContentView();
 
-    }
 
     //初始化各个控件
-    private void initViews() {
+    public void initViews(Bundle savedInstanceState) {
+        setContentView(R.layout.activity_main);
+        showWaitingDialog("加载数据中");
         indexRadioGroup = (RadioGroup) findViewById(R.id.index_radioGroup);
         viewPagerIndex = (ViewPager) findViewById(R.id.viewPagerIndex);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -73,7 +77,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        hideWaitingDialog();
+        loadData();
+
     }
+
+
+    @Override
+    protected void loadData() {
+        ContentView();
+    }
+
+
 
     //把各个控件的点击事件实现
     private void ContentView(){
@@ -144,4 +159,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
+    
 }

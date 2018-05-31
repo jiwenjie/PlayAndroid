@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:gravity="center"
+        android:id="@+id/test_bottom"
+        android:text="点击选择"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
+</android.support.constraint.ConstraintLayout>

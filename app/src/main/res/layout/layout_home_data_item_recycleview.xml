@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:layout_marginTop="30px"
+        android:layout_marginTop="30dp"
         app:cardCornerRadius="10dp"
         app:contentPadding="10dp">
 
@@ -19,8 +19,8 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_photo"
-                android:layout_width="50px"
-                android:layout_height="50px"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/ic_photo"
                 />
 
@@ -29,8 +29,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@id/iv_photo"
-                android:layout_marginLeft="10px"
-                android:layout_marginTop="10px"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
                 android:layout_toRightOf="@id/iv_photo"
                 android:text="作者"
                 android:textColor="@color/main"
@@ -51,12 +51,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iv_photo"
-                android:layout_marginRight="80px"
+                android:layout_marginRight="80dp"
                 android:text="文章标题文章标题文章标题文章标题文章标题文章标题"
                 android:textColor="@color/text0"
                 android:textSize="@dimen/text_big_size"
-                android:layout_marginTop="30px"
-                android:layout_marginLeft="10px"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
                 />
 
 

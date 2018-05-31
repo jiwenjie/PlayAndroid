@@ -1,5 +1,6 @@
 package com.example.root.playandroidtest.util;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.widget.Toast;
 
@@ -42,6 +43,18 @@ public class T {
         if (isShow) {
             Toast.makeText(context, message, Toast.LENGTH_LONG).show();;
         }
+    }
+
+    /**
+     * 用来显示加载中的过程显示
+     * @param context
+     */
+    public static void showProgressDialog(Context context) {
+        ProgressDialog progressDialog = new ProgressDialog(context);
+        progressDialog.setTitle("This is ProgressDialog");
+        progressDialog.setMessage("Loading....");
+        progressDialog.setCancelable(true);
+        progressDialog.show();
     }
 
 }

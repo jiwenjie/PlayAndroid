@@ -31,21 +31,21 @@
             android:textSize="@dimen/normal_topbar_textSize"
             />
 
-    <com.example.root.playandroidtest.view.IconFontTextView
-        android:id="@+id/module_other"
-        android:layout_width="@dimen/topbar_icon_width_height"
-        android:layout_height="match_parent"
-        android:textSize="@dimen/normal_topbar_margin_text"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:text="@string/ic_share"
-        android:layout_alignParentRight="true"
-        android:visibility="gone"
-        />
+        <com.example.root.playandroidtest.view.IconFontTextView
+            android:id="@+id/module_other"
+            android:layout_width="@dimen/topbar_icon_width_height"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/normal_topbar_margin_text"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="@string/ic_share"
+            android:layout_alignParentRight="true"
+            android:visibility="gone"
+            />
 
-    <View
-        style="@style/lineStyle"
-        android:layout_alignParentBottom="true"
-        />
+    <!--<View-->
+        <!--style="@style/lineStyle"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--/>-->
 
 </RelativeLayout>
