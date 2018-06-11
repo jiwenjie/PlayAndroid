@@ -98,7 +98,7 @@ public class SearchFragment extends Fragment {
                 Map<Integer, JSONArray> beanList = ParserJsonWebData.parseTagSecondWithJSON(responseData);
 
                 if (voList.size() <= 0 || beanList.size() <= 0) {
-                    T.showShort(getContext(), "获取网络数据失败");
+                    T.showShort(getContext(),"获取网络数据失败");
                     recycleView.setVisibility(View.GONE);
                     no_Data.setVisibility(View.VISIBLE);
                     return;
@@ -116,7 +116,7 @@ public class SearchFragment extends Fragment {
 
             @Override
             public void onFailure(Call call, IOException e) {
-                T.showShort(getContext(), "获取网络数据失败");
+                T.showShort(getContext(),"获取网络数据失败");
                 recycleView.setVisibility(View.GONE);
                 no_Data.setVisibility(View.VISIBLE);
             }
@@ -242,7 +242,7 @@ public class SearchFragment extends Fragment {
                                 List<ArticleBean> getDataList = ParserJsonWebData.parseJsonWithGSON(responseData);
 //                       List<ArticleBean> getDataList = ParserJsonWebData.parseJSONWITHJSONObject(responseData);
                                 if (getDataList==null) {
-                                    T.showShort(MyApplication.getContext(), "搜索数据对象为空");
+                                    T.showShort(getContext(),"搜索数据对象为空");
                                 }
                                 //找出当前的一共多少个对象（List中有多少个对象）
 //                                int size = getDataList.size();
@@ -272,7 +272,7 @@ public class SearchFragment extends Fragment {
 
             @Override
             public void onFailure(Call call, IOException e) {
-                T.showShort(getContext(), "获取网络数据失败");
+                T.showShort(getContext(),"获取网络数据失败");
                 recycleView.setVisibility(View.GONE);
                 no_Data.setVisibility(View.VISIBLE);
             }
@@ -328,7 +328,7 @@ public class SearchFragment extends Fragment {
                 List<ArticleBean> getDataList = ParserJsonWebData.parseJsonWithGSON(responseData);
 //                       List<ArticleBean> getDataList = ParserJsonWebData.parseJSONWITHJSONObject(responseData);
                 if (getDataList==null) {
-                    T.showShort(MyApplication.getContext(), "搜索数据对象为空");
+                    T.showShort(getContext(),"搜索数据对象为空");
                 }
 
                 getActivity().runOnUiThread(new Runnable() {
@@ -353,7 +353,7 @@ public class SearchFragment extends Fragment {
                     public void run() {
 //                        initReceiver();
                         listAdapter.loadMoreFail();
-                        T.showShort(MyApplication.getContext(), "没有获取到网络数据");
+                        T.showShort(getContext(),"没有获取到网络数据");
                     }
                 });
             }

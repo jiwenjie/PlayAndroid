@@ -62,7 +62,7 @@ public class HomeDataAdapter extends RecyclerView.Adapter<HomeDataAdapter.ViewHo
                 int position = holder.getAdapterPosition();
                 ArticleBean bean = list.get(position);
                 String link = bean.getLink();
-                T.showShort(MyApplication.getContext(), "链接为：" + link);
+//                T.showShort("链接为：" + link);
 
             }
         });

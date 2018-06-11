@@ -11,6 +11,8 @@ import android.support.v4.view.animation.FastOutLinearInInterpolator;
 
 import com.example.root.playandroidtest.app.MyApplication;
 
+import static org.litepal.LitePalApplication.getContext;
+
 /**
  * Created by Root on 2018/3/17.
  * 判断网络情况
@@ -74,21 +76,21 @@ public class NetWorkStateReceiver extends BroadcastReceiver {
 //                sb.append(networkInfo.getTypeName() + " connect is " + networkInfo.isConnected());
             }
 //            Toast.makeText(context, sb.toString(),Toast.LENGTH_SHORT).show();
-            T.showShort(context, sb.toString());
+            T.showShort(getContext(),sb.toString());
         }
     }
 
     private void isConnectSuccess() {
         Intent netIntent = new Intent(NET_CHANGE);
         netIntent.putExtra(NET_TYPE,1);
-        MyApplication.getContext().sendBroadcast(netIntent);
-        T.showShort(MyApplication.getContext(), "网络已经连接");
+        getContext().sendBroadcast(netIntent);
+        T.showShort(getContext(),"网络已经连接");
     }
 
     private void isConnectFail() {
         Intent netIntent = new Intent(NET_CHANGE);
         netIntent.putExtra(NET_TYPE,0);
-        MyApplication.getContext().sendBroadcast(netIntent);
-        T.showShort(MyApplication.getContext(), "WIFI 已断开， 移动数据已断开");
+        getContext().sendBroadcast(netIntent);
+        T.showShort(getContext(),"WIFI 已断开， 移动数据已断开");
     }
 }

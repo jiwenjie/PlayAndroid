@@ -4,6 +4,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.widget.Toast;
 
+import com.example.root.playandroidtest.app.MyApplication;
+
 /**
  * Created by Root on 2018/3/14.
  *
@@ -17,7 +19,8 @@ public class T {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 
-    public static boolean isShow = true;
+    private static boolean isShow = true;
+
 
     /**
      * 短时间显示Toast统一管理
@@ -28,6 +31,14 @@ public class T {
 
         if (isShow) {
             Toast.makeText(context, message, Toast.LENGTH_SHORT).show();;
+        }
+    }
+
+
+    public static void showShort(CharSequence message) {
+
+        if (isShow) {
+            Toast.makeText(MyApplication.getInstance(), message, Toast.LENGTH_SHORT).show();;
         }
     }
 

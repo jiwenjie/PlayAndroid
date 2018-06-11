@@ -33,37 +33,75 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp">
+        android:layout_margin="8dp">
 
         <EditText
             android:id="@+id/et_name"
-            android:hint="用户名/账号/邮箱"
-            android:padding="10dp"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColorHint="@color/gray"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            />
+            android:layout_height="36dp"
+            android:textColorHint="@color/gray"
+            android:layout_marginLeft="6dp"
+            android:background="@null"
+            android:hint="用户名"
+            android:textSize="20sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/et_name"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/horizontal_line"/>
+
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp">
+        android:layout_margin="8dp">
 
         <EditText
             android:id="@+id/et_password"
-            android:hint="密  码"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColorHint="@color/gray"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:inputType="numberPassword"
-             />
+            android:layout_height="36dp"
+            android:textColorHint="@color/gray"
+            android:layout_marginLeft="6dp"
+            android:background="@null"
+            android:hint="密码"
+            android:inputType="textPassword"
+            android:textSize="20sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/et_password"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/horizontal_line"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <EditText
+            android:id="@+id/et_confirmPass"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:textColorHint="@color/gray"
+            android:layout_marginLeft="6dp"
+            android:background="@null"
+            android:hint="确认密码"
+            android:inputType="textPassword"
+            android:textSize="20sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/et_confirmPass"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/horizontal_line"/>
+
     </RelativeLayout>
 
     <LinearLayout
@@ -76,25 +114,15 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:text="登陆"
+            android:text="注册"
             android:textStyle="bold"
             android:background="@drawable/btn_login_item"
             android:textColor="@color/white"
             android:textSize="@dimen/text_big_size"
             />
-
-        <TextView
-            android:id="@+id/register"
-            android:textStyle="bold"
-            android:paddingTop="18dp"
-            android:text="没有账号，去注册"
-            android:textColor="@color/text2"
-            android:gravity="center_horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

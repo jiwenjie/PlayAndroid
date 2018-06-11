@@ -42,7 +42,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         initReceiver();
     }
 
-
     //      监听广播
     private void initReceiver() {
         netReceiver = new BroadcastReceiver() {
@@ -50,9 +49,9 @@ public abstract class BaseActivity extends AppCompatActivity {
             public void onReceive(Context context, Intent intent) {
 //                判断当前网络状态
                 if(intent.getIntExtra(NetWorkStateReceiver.NET_TYPE,0)==0){
-                    T.showShort(MyApplication.getContext(), "网络没有连接，应该读取缓存数据");
+                    T.showShort(getApplicationContext(), "网络没有连接，应该读取缓存数据");
                 }else {
-                    T.showShort(MyApplication.getContext(), "网络已经连接，应该优先取缓存数据");
+                    T.showShort(getApplicationContext(), "网络已经连接，应该优先取缓存数据");
                 }
             }
         };
@@ -60,7 +59,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         IntentFilter filter = new IntentFilter(NetWorkStateReceiver.NET_CHANGE);
         registerReceiver(netWorkStateReceiver,filter);
     }
-
 
     //在onResume()方法注册
     @Override

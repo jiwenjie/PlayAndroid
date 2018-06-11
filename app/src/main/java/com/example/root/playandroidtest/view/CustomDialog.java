@@ -10,11 +10,9 @@ import android.view.Window;
 import android.view.WindowManager;
 
 /**
- * autour: lqm
  * desc: 自定义圆角的dialog
  */
 public class CustomDialog extends Dialog {
-
 
     /**
      * 宽高由布局文件中指定（但是最底层的宽度无效，可以多嵌套一层解决）

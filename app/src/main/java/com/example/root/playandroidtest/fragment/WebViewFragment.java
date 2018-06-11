@@ -8,12 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 
-/**
- * Created by Root on 2018/3/18.
- */
 
 public class WebViewFragment extends Fragment {
-
 
     private WebView mWebView;
     private boolean mIsWebViewAvailable;
@@ -75,7 +71,6 @@ public class WebViewFragment extends Fragment {
      * Gets the WebView.
      */
     public WebView getWebView() {
-
         return mIsWebViewAvailable ? mWebView : null;
     }
 }

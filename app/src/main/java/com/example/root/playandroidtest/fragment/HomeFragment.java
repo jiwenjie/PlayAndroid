@@ -41,6 +41,7 @@ import okhttp3.Response;
  * 首页 Fragment
  */
 public class HomeFragment extends Fragment {
+
     private SwipeRefreshLayout swipeRefresh;
     private RecyclerView recyclerView;
     private BroadcastReceiver netReceiver;
@@ -51,29 +52,22 @@ public class HomeFragment extends Fragment {
     private int mCurrentCounter = 0;
     private int mNextRequestPage = 1;
 
-    private View emptyView;
-
     public HomeFragment() {  }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_home,container,false);
-
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         initViewContent(rootView);
         doClick();
         return rootView;
     }
-
-
-
 
     //刷新事件的响应
     private void doClick(){
@@ -142,7 +136,7 @@ public class HomeFragment extends Fragment {
                         List<ArticleBean> getDataList = ParserJsonWebData.parseJsonWithGSON(responseData);
 //                       List<ArticleBean> getDataList = ParserJsonWebData.parseJSONWITHJSONObject(responseData);
                         if (getDataList==null) {
-                            T.showShort(MyApplication.getContext(), "首页数据对象为空");
+                            T.showShort(getContext(),"首页数据对象为空");
                         }
                         //找出当前的一共多少个对象（List中有多少个对象）
                         int size = getDataList.size();
@@ -166,16 +160,9 @@ public class HomeFragment extends Fragment {
             @Override
             public void onFailure(Call call, IOException e) {
                 //获取网络数据失败之后检查是否有网络连接
-                T.showShort(getContext(), "获取网络数据失败");
+                T.showShort(getContext(),"获取网络数据失败");
                 recyclerView.setVisibility(View.GONE);
                 tv_notGetData.setVisibility(View.VISIBLE);
-//                getActivity().runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        initReceiver();
-//                        //T.showShort(MyApplication.getContext(), "没有获取到网络数据");
-//                    }
-//                });
             }
         });
 
@@ -222,7 +209,7 @@ public class HomeFragment extends Fragment {
 //               判断当前网络状态
                 if (intent.getIntExtra(NetWorkStateReceiver.NET_TYPE, 0) == 0) {
 //                0表示无网络连接,
-                    T.showShort(MyApplication.getContext(), "网络没有连接，应该读取缓存数据");
+                    T.showShort(getContext(),"网络没有连接，应该读取缓存数据");
                     recyclerView.setVisibility(View.GONE);  //设置隐藏RecycleView
                     tv_notGetData.setVisibility(View.VISIBLE); //设置显示错误界面
                     getDataFromCache();
@@ -252,7 +239,7 @@ public class HomeFragment extends Fragment {
                 List<ArticleBean> getDataList = ParserJsonWebData.parseJsonWithGSON(responseData);
 //                       List<ArticleBean> getDataList = ParserJsonWebData.parseJSONWITHJSONObject(responseData);
                 if (getDataList==null) {
-                    T.showShort(MyApplication.getContext(), "首页数据对象为空");
+                    T.showShort(getContext(),"首页数据对象为空");
                 }
 
                 getActivity().runOnUiThread(new Runnable() {
@@ -277,7 +264,7 @@ public class HomeFragment extends Fragment {
                     public void run() {
                         initReceiver();
                         listAdapter.loadMoreFail();
-                        T.showShort(MyApplication.getContext(), "没有获取到网络数据");
+                        T.showShort(getContext(), "没有获取到网络数据");
                     }
                 });
             }
@@ -304,7 +291,6 @@ public class HomeFragment extends Fragment {
                 String responseNetData = CacheDataUtil.readNetForFile(AppConst.FILE_NAME);
                 List<ArticleBean> getCacheDataList = ParserJsonWebData.parseJsonWithGSON(responseNetData);
                 ArticleListAdapter adapter = new ArticleListAdapter(MyApplication.getContext(), getCacheDataList);
-
                 //设置item的动画效果
                 adapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
                 //设置重复执行动画
@@ -333,10 +319,6 @@ public class HomeFragment extends Fragment {
             //清除所有的缓存
             netDataFile.delete();
             CacheDataUtil.WriteStringToFile2(AppConst.FILE_NAME, responseData);
-//            CacheDataUtil.clearAllCache(MyApplication.getContext());
-            //写入数据
-//            int time = (int)System.currentTimeMillis()/60000;
-//            CacheDataUtil.WriteNetDataToFile(AppConst.FILE_NAME, responseData,time);
         } else {
             netDataFile.mkdir();
             CacheDataUtil.WriteStringToFile2(AppConst.FILE_NAME, responseData);

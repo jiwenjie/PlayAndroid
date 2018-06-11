@@ -29,6 +29,8 @@ public class AppConst {
 
     public static boolean IS_FIRST_PLAY_APP = true;  //获取标识判断是否是第一次安装使用APP
 
+    public static boolean IS_LOGIN = false;     //标识用户是否登陆
+
     public static int TOTAL_COUNTER = 30;
 
     public static final String CACHE_ROAD = "";
@@ -46,14 +48,8 @@ public class AppConst {
     public static final String CACHE_PATH_ONE =  cachePath1;
     //设置缓存路径的第二种
     public static final String CACHE_PATH_TWO =  cachePath2;
-//    cachePath1--/storage/emulated/0/Android/data/com.zyj.app/cache
-//    cachePath2--/data/user/0/com.zyj.app/cache
+
     public static final String FILE_NAME = "NetData";
 
-//    //SD卡缓存目录
-//    // /storage/emulated/0/Android/data/app_package_name/files/Pictures
-//    Content.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-//    // /storage/emulated/0/Android/data/app_package_name/cache
-//    Content.getExternalCacheDir();
 
 }

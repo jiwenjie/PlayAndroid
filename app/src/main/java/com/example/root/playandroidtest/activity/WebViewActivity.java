@@ -54,16 +54,11 @@ public class WebViewActivity extends BaseActivity {
 
     private WebViewFragment mWebViewFragment;
 
-
     public static void runActivity(Context context, String url) {
         Intent intent = new Intent(context, WebViewActivity.class);
         intent.putExtra(WEB_URL, url);
         context.startActivity(intent);
     }
-
-//    public void init() {
-//        mUrl = getIntent().getStringExtra(WEB_URL);
-//    }
 
     @Override
     public void init() {
@@ -80,7 +75,6 @@ public class WebViewActivity extends BaseActivity {
         webView_title = (TextView) findViewById(R.id.WebView_title);
         mWebViewDialog = new Dialog(this, R.style.BottomDialog);
         doClick();
-//        tv_return = ()
         ActivityUtils.addFragmentToActivity(getSupportFragmentManager(), mWebViewFragment, R.id.webView_Play);
     }
 
@@ -110,23 +104,6 @@ public class WebViewActivity extends BaseActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
-
-//    @Override
-//    public void onClick(View view) {
-//
-//        switch (view.getId()) {
-//            case R.id.webView_return:
-//                T.showShort(getContext(), "点击了返回按钮！");
-//                finish();
-//                break;
-//            case R.id.WebView_other:
-//                //更多按钮
-//                setDialog();
-//                break;
-//            default:
-//                break;
-//        }
-//    }
 
     //点击响应事件
     private void doClick() {
@@ -177,7 +154,7 @@ public class WebViewActivity extends BaseActivity {
         btn_open_share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                T.showShort(MyApplication.getContext(), "你点击了分享按钮！");
+                T.showShort(getApplicationContext(), "你点击了分享按钮！");
                 mWebViewDialog.dismiss();
             }
         });

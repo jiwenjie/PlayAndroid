@@ -42,14 +42,21 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    compile 'com.android.support:recyclerview-v7:26.1.0'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile 'com.squareup.okhttp3:okhttp:3.4.1'
-    compile 'com.google.code.gson:gson:2.7'
-    compile 'com.android.support:cardview-v7:26.1.0'
-    compile 'com.android.support:design:26.1.0'
-    compile 'de.hdodenhof:circleimageview:2.1.0'
-    compile 'com.google.android:flexbox:0.2.2'
-    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
-    compile 'com.android.support:multidex:1.0.1'
+
+
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+    implementation 'com.google.code.gson:gson:2.7'
+    implementation 'com.android.support:cardview-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    implementation 'com.google.android:flexbox:0.2.2'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    implementation 'com.android.support:multidex:1.0.1'
+
+    //增加Litepal的支持，本地数据库保存一些用户信息
+    implementation 'org.litepal.android:core:2.0.0'
+    //增加通信部分eventBus
+    implementation 'org.greenrobot:eventbus:3.0.0'
 }

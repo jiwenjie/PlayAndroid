@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.ContentUris;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -75,6 +76,8 @@ public class UserFragment extends Fragment {
     public static final int TAKE_PHOTO = 1;
     public static final int CHOOSE_PHOTO = 2;
 
+    private SharedPreferences preferences;
+
     public UserFragment() { }
 
     @Nullable
@@ -82,9 +85,40 @@ public class UserFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_user, container, false);
+        Check_ISLogin();
         initView(rootView);
         doClick();
         return rootView;
+    }
+
+    private void Check_ISLogin() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        Thread.sleep(500);
+                        if (AppConst.IS_LOGIN) {        //检测到登陆状态为true
+                            preferences = getActivity().getSharedPreferences("config", 0);
+
+                            getActivity().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    tv_logou.setText("退出登陆");
+                                    tv_logou.setTextColor(getResources().getColor(R.color.red_light));
+                                    tv_userName.setText(preferences.getString("username", "Test"));
+                                }
+                            });
+
+                        }
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+        }).start();
     }
 
     //初始化各个控件
@@ -118,7 +152,7 @@ public class UserFragment extends Fragment {
                 //当点击收藏按钮时，先判断用户是否登陆
                 if (PreferUtils.getBoolean(MyApplication.getContext(), AppConst.IS_LOGIN_KEY, false) == false) {
                     //判断boolean值是否为空，默认值为空
-                    T.showShort(MyApplication.getContext(), "请先登录");
+                    T.showShort(getContext(),"请先登录");
                     return;
                 } else {
                     //用户已经登陆
@@ -134,7 +168,7 @@ public class UserFragment extends Fragment {
 //                setDialog();
                 if (PreferUtils.getBoolean(MyApplication.getContext(), AppConst.IS_LOGIN_KEY, false) == true){
                     //说明已经登陆
-                    T.showShort(MyApplication.getContext(), "您已登陆");
+                    T.showShort(getContext(),"您已登陆");
 //                    return;
                 } else {
                     Intent login_intent = new Intent(MyApplication.getContext(), UserLoginActivity.class);
@@ -151,11 +185,11 @@ public class UserFragment extends Fragment {
                 if (PreferUtils.getBoolean(getContext(), AppConst.IS_LOGIN_KEY, false) == false) {
                     //说明没有登陆
                     //tv_logou.setText("尚未登陆");
-                    T.showShort(MyApplication.getContext(), "对不起，您还没有登陆");
+                    T.showShort(getContext(),"对不起，您还没有登陆");
                 } else {
 //                    tv_logou.setText("退出登陆");
 //                    tv_logou.setTextColor(getResources().getColor(R.color.colorAccent));
-                    T.showShort(MyApplication.getContext(), "对不起，您已经退出登陆");
+                    T.showShort(getContext(),"对不起，您已经退出登陆");
                 }
             }
         });
@@ -173,7 +207,7 @@ public class UserFragment extends Fragment {
                 //点击头像按钮，首先判断是否登陆
                 //如果登陆，则弹出两个选择，拍照或者从相册选择
                 //如果没有登陆则不响应
-                T.showShort(MyApplication.getContext(), "点击了头像");
+                T.showShort(getContext(),"点击了头像");
                 setDialog();
             }
         });
@@ -258,7 +292,7 @@ public class UserFragment extends Fragment {
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                T.showShort(MyApplication.getContext(), "取消");
+                T.showShort(getContext(),"取消");
                 mCameraDialog.dismiss();
             }
         });
@@ -345,7 +379,7 @@ public class UserFragment extends Fragment {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     openAlbum();
                 } else {
-                    T.showShort(getContext(), "You denied the permission");
+                    T.showShort(getContext(),"You denied the permission");
                 }
                 break;
             default:
@@ -403,7 +437,7 @@ public class UserFragment extends Fragment {
             Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
             user_photo.setImageBitmap(bitmap);
         } else {
-            T.showShort(getContext(), "Failed to get image！Please try again!");
+            T.showShort(getContext(),"Failed to get image！Please try again!");
         }
     }
 
